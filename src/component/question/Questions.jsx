@@ -70,18 +70,20 @@ function Questions() {
                                 <div className='answer__section'>
                                     {questions[currentQuestion].answerOptions.map(q =>
 
-                                            <button
-                                                key={q.answerText}
-                                                onClick={() => handleAnswerOptionClick(q.isCorrect, q)}
-                                            >{q.answerText}
-                                            </button>
-
+                                        <button
+                                            key={q.answerText}
+                                            onClick={() => handleAnswerOptionClick(q.isCorrect, q)}
+                                        >{q.answerText}
+                                        </button>
                                     )}
                                 </div>
                             </div>}
-                        {timer&& <div className='quiz__timer'>
-                            <Timer />
-                        </div>}
+                        {
+                            timer ? <div className='quiz__timer'>
+                                    <Timer/>
+                                </div>
+                                : <></>
+                        }
 
 
                     </div>
